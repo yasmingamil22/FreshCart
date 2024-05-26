@@ -1,0 +1,32 @@
+.links{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    gap: 10px;
+}
+.count{
+    position: absolute;
+    top: 0;
+    left :40px
+
+}
+.btn-main{
+    background-color: #0aad0a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid #0aad0a;
+    cursor: pointer;
+
+    &:hover{
+    background-color: white;
+    color: #0aad0a;
+    border: 1px solid #0aad0a;
+    }
+}
+@media  screen and (max-width: 991px) {
+    .count {
+        left :12px
+    }
+  }

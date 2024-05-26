@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+$main-color:#0aad0a;
+$disabled-main-color:#0aad0aa9;
+$disabled-white-color:#ffffffd2;
+
+$light-color:#f0f3f2;
+$rating-color:#ffc908;
+$shadow:rgba(145,158,171,.2) 0px 2px 4px -1px,
+rgba(145,158,171,.14) 0px 4px 5px 0px,
+rgba(145,158,171,.12) 0px 1px 10px 0px;
+$main-font:"Encode Sans Expanded", sans-serif ;
+$main-transtion:.8s;
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+background-color: $light-color;
+}
+
+::-webkit-scrollbar-thumb{
+background-color: $main-color;
+}
+
+body{
+    font-family: $main-font;
+}
+.text-main{
+    color: $main-color;
+}
+.text-light{
+    color: $light-color;
+}
+.text-rating{
+    color: $rating-color;
+}
+.bg-main{
+    background-color: $main-color;
+}
+.bg-main-light{
+    background-color: $light-color;
+}
+.font-sm{
+    font-size: 11px;
+}
+.btn-main{
+    background-color: $main-color;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: unset;
+    cursor: pointer;
+
+  &:disabled{
+    background-color: $disabled-main-color;
+    color: $disabled-white-color;
+    cursor: not-allowed;
+  }
+}
+
+.product{
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    padding: 8px ;
+    box-shadow: $shadow;
+}
+.active-link{
+    color: white !important;
+    background-color: $main-color !important;
+    border-radius: 4px !important;
+
+}

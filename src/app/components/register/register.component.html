@@ -1,0 +1,89 @@
+
+
+<section class="w-75 mx-auto shadow-sm rounded-1 p-4 my-3 bg-main-light">
+    <h2 class="my-3">Register Now</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="handleForm()">
+    
+        <div class="form-item">
+            <label for="name">name </label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+
+       
+
+        <div *ngIf="registerForm.get('name')?.errors &&registerForm.get('name')?.touched " class="text-danger d-flex align-items-center small m-0 p-0 p-2">
+           
+            <img src="./assets/img/invalid.png" width="22" height="22" alt="">
+            <p *ngIf="registerForm.get('name')?.getError('required')" class="m-0 mx-1">name is required</p>
+            <p *ngIf="registerForm.get('name')?.getError('minlength')"  class="m-0 mx-1">name must contain at least 3 letters</p>
+            <p *ngIf="registerForm.get('name')?.getError('maxlength')"  class="m-0 mx-1" >name must contain at most 20 letters</p>
+
+        </div>
+        
+
+        <div class="form-item mt-2">
+            <label for="email">email </label>
+            <input type="email" id="email" class="form-control" formControlName="email">
+        </div>
+
+       
+        <div *ngIf="registerForm.get('email')?.errors &&registerForm.get('email')?.touched " class="text-danger d-flex align-items-center small m-0 p-0 p-2">
+            <img src="./assets/img/invalid.png" width="22" height="22" alt="">
+            <p *ngIf="registerForm.get('email')?.getError('required')" class="m-0 mx-1">email is required</p>
+            <p *ngIf="registerForm.get('email')?.getError('email')"  class="m-0 mx-1">email is invalid</p>
+
+        </div>
+
+        
+
+        <div class="form-item  mt-2">
+            <label for="password">password </label>
+            <input type="password" id="password" class="form-control" formControlName="password">
+        </div>
+
+        <div *ngIf="registerForm.get('password')?.errors &&registerForm.get('password')?.touched " class="text-danger d-flex align-items-center small m-0 p-0 p-2">
+            <img src="./assets/img/invalid.png" width="22" height="22" alt="">
+            <p *ngIf="registerForm.get('password')?.getError('required')" class="m-0 mx-1">password is required</p>
+            <p *ngIf="registerForm.get('password')?.getError('pattern')"  class="m-0 mx-1">password must contain at least 6 letters</p>
+
+        </div>
+
+        <div class="form-item  mt-2">
+            <label for="rePassword">rePassword </label>
+            <input type="password" id="rePassword" class="form-control" formControlName="rePassword">
+        </div>
+
+        <div *ngIf="registerForm.get('rePassword')?.errors &&registerForm.get('rePassword')?.touched " class="text-danger d-flex align-items-center small m-0 p-0 p-2">
+            <img src="./assets/img/invalid.png" width="22" height="22" alt="">
+            <p *ngIf="registerForm.get('rePassword')?.getError('required')" class="m-0 mx-1">rePassword is required</p>
+            <p *ngIf="registerForm.get('rePassword')?.getError('mismatch')"  class="m-0 mx-1">password is mismatch</p>
+
+        </div>
+
+
+        <div class="form-item  mt-2">
+            <label for="phone">phone </label>
+            <input type="tel" id="phone" class="form-control" formControlName="phone">
+        </div>
+
+        <div *ngIf="registerForm.get('phone')?.errors &&registerForm.get('phone')?.touched " class="text-danger d-flex align-items-center small m-0 p-0 p-2">
+            <img src="./assets/img/invalid.png" width="22" height="22" alt="">
+            <p *ngIf="registerForm.get('phone')?.getError('required')" class="m-0 mx-1">phone is required</p>
+            <p *ngIf="registerForm.get('phone')?.getError('pattern')"  class="m-0 mx-1">accept only egypt phone numbers</p>
+
+        </div>
+
+        <button [disabled]="registerForm.invalid" class="btn-main mt-2">
+            Register
+            <span *ngIf="isLoading"> <i class="fas fa-spin fa-spinner ms-1"></i></span>
+        </button>
+
+
+        <div *ngIf="mesError" class="alert alert-danger small m-0 p-0 w-25 m-auto text-center">
+            <p  class="m-0 ">{{mesError}}</p>
+        </div>
+    
+    </form>
+
+</section>

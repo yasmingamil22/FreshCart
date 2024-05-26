@@ -1,1 +1,19 @@
-<p>category works!</p>
+<section class="categories py-5">
+      <div class="row justify-content-center row-gap-4">
+        <div *ngFor="let category of categories" class="col-md-3">
+          <div class="card">
+            <img
+              height="380px"
+              class="card-img-top"
+              [src]="category.image"
+              alt="Title"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center text-main">
+                {{ category.name }}
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>

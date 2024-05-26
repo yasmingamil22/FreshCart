@@ -11,8 +11,8 @@ export class ProductService {
 
   constructor(private _HttpClient:HttpClient) { }
 
-  getAllProducts():Observable<any>{
-    return this._HttpClient.get(this.baseUrl+"products")
+  getAllProducts(pageNum:number=1,limit:number):Observable<any>{
+    return this._HttpClient.get(this.baseUrl+`products?page=${pageNum}&limit=${limit}`)
   }
   getAllCategories():Observable<any>{
     return this._HttpClient.get(this.baseUrl+"categories")

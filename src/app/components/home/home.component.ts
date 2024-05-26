@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit{
     private _ToastrService:ToastrService){}
 
   ngOnInit(): void {
-    this._ProductService.getAllProducts().subscribe({
+    this._ProductService.getAllProducts(1,16).subscribe({
       next:(response)=>{
 
       this.productList=response.data
